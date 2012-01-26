@@ -1,0 +1,14 @@
+This is a simple http server that pushes notifications that the
+files that it is serving have changed.  To use, first change to 
+the directory where your files are then run refreshServer.py there
+
+Then in the html file that you want to use to monitor for refresh
+notifications add
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/refresher.js"></script>
+<script type="text/javascript">
+    window.onload = function() { pollForRefresh('/refreshMonitor') };
+</script>
+
+Finally navigate to http://localhost:8000/name_of_file.html
